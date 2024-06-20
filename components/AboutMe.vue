@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col h-screen">
+  <section class="flex flex-col h-fit">
     <SectionTitle
       title="MY BIO"
       description="About"

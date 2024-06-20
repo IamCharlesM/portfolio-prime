@@ -5,5 +5,6 @@
     <Services />
     <portfolio />
     <AboutMe />
+    <ContactMe />
   </div>
 </template>
