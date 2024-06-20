@@ -18,9 +18,9 @@
           />
         </div>
 
-        <figcaption class="text-sm flex flex-col gap-4 px-11">
+        <figcaption class="text-sm flex flex-col gap-4 lg:px-0 px-11">
           <h3 class="text-2xl font-medium">{{ title }}</h3>
-          <p class="text-lg">{{ excerpt }}</p>
+          <p class="text-lg font-light">{{ excerpt }}</p>
         </figcaption>
       </figure>
     </NuxtLink>
