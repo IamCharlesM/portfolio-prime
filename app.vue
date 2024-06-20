@@ -4,5 +4,6 @@
     <Hero />
     <Services />
     <portfolio />
+    <AboutMe />
   </div>
 </template>
