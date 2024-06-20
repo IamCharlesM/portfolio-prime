@@ -1,6 +1,11 @@
 <template>
-  <section class="md:h-[482px] bg-muted flex flex-col h-fit">
-    <div class="max-w-7xl md:px-10 mx-auto py-4 h-full flex flex-col w-full">
+  <section
+    class="lg:h-[482px] bg-muted flex flex-col h-fit"
+    id="services"
+  >
+    <div
+      class="max-w-7xl md:px-10 mx-auto p-4 h-full flex flex-col w-full md:gap-11"
+    >
       <SectionTitle
         title="Services"
         description="What "
@@ -8,7 +13,7 @@
         class="h-fit"
       />
       <div
-        class="flex flex-col md:grid md:grid-cols-3 md:grid-rows-1 h-full md:p-11 gap-3 p-4"
+        class="flex flex-col md:grid md:grid-cols-3 md:grid-rows-1 h-full px-11 gap-3"
       >
         <Card icon="cloud-cog" />
         <Card icon="code" />

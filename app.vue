@@ -3,5 +3,6 @@
     <Navbar />
     <Hero />
     <Services />
+    <portfolio />
   </div>
 </template>
