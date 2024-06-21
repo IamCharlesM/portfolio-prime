@@ -5,7 +5,7 @@
   >
     <div class="max-w-5xl mx-auto md:h-96 h-fit gap-10 lg:gap-36 flex flex-col">
       <TitleBody
-        class="flex flex-col h-fit"
+        class="flex flex-col h-fit text-center"
         heading="1"
         title="What's good? I'm"
         name="Charles McGregory."

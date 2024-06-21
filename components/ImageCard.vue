@@ -6,7 +6,7 @@
     >
       <figure class="rounded-lg flex flex-col w-full gap-4">
         <div
-          class="px-2 py-4 border border-primary h-64 w-fit mx-auto hover:border hover:bg-primary hover:bg-primary hover:text-black transition duration-300 ease-linear"
+          class="px-2 bg-card py-4 lg:p-8 border border-primary h-64 w-fit mx-auto hover:border hover:bg-primary transition duration-300 ease-linear"
         >
           <NuxtPicture
             :src="src"

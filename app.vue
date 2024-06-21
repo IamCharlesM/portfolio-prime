@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <Navbar />
-    <Hero />
-    <Services />
-    <portfolio />
-    <AboutMe />
-    <ContactMe />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

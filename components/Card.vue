@@ -18,7 +18,7 @@
 <template>
   <Card
     v-if="icon == 'code'"
-    class="border border-primary hover:bg-primary hover:text-black transition duration-300 ease-linear"
+    class="border border-primary hover:bg-primary hover:text-black transition duration-300 ease-linear [clip-path:polygon(0%_20%,0%_0%,90%_0%,100%_20%,100%_100%,90%_100%,10%_100%,0%_100%)]"
   >
     <CardHeader>
       <CardTitle class="space-y-4">
