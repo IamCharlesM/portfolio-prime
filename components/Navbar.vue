@@ -1,16 +1,18 @@
 <template>
   <nav class="items-center justify-between h-28 p-4 flex flex-row border-b-2">
     <div>
-      <NuxtPicture
-        format="avif,webp"
-        src="/logo.webp"
-        placeholder
-        quality="80"
-        width="100"
-        height="100"
-        alt="My Logo"
-        fit="cover"
-      />
+      <NuxtLink to="/">
+        <NuxtPicture
+          format="avif,webp"
+          src="/logo.webp"
+          placeholder
+          quality="80"
+          width="100"
+          height="100"
+          alt="My Logo"
+          fit="cover"
+        />
+      </NuxtLink>
     </div>
     <div class="flex md:hidden">
       <DrawerMenu

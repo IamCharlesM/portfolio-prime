@@ -21,6 +21,7 @@
             :title="post.title"
             :excerpt="post.excerpt"
             :link="`/project/${post.slug}`"
+            :tags="post.tags"
           />
         </div>
       </div>
@@ -48,7 +49,7 @@
   };
 
   // Call the function with a sample date
-  //   console.log(data.value.posts[0].published_at);
+  // console.log(data.value.posts[0].tags);
 </script>
 
 <style scoped></style>

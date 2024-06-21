@@ -1,16 +1,6 @@
 <template>
   <div class="max-w-7xl md:px-10 mx-auto py-4 h-full flex flex-col md:gap-11">
     <div
-      v-if="pending"
-      class="flex flex-row space-x-5"
-    >
-      <!-- Display an empty div if data is null -->
-      <ImageLoader class="" />
-      <ImageLoader class="" />
-      <ImageLoader class="" />
-      <ImageLoader class="" />
-    </div>
-    <div
       class="flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-2 overflow-clip gap-16 md:gap-4 w-full"
     >
       <div
@@ -23,6 +13,7 @@
           :title="post.title"
           :excerpt="post.excerpt"
           :link="`/project/${post.slug}`"
+          :tags="post.tags"
         />
       </div>
     </div>
@@ -49,5 +40,5 @@
   };
 
   // Call the function with a sample date
-  // console.log(data.value.posts[0].published_at);
+  console.log(data.value.posts[0]);
 </script>
