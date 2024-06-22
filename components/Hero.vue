@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-[calc(100vh-112px)] place-content-center p-4"
+    class="min-h-[calc(100vh-112px)] place-content-center p-4 overflow-auto"
     id="home"
   >
     <div class="max-w-5xl mx-auto md:h-96 h-fit gap-10 lg:gap-36 flex flex-col">
