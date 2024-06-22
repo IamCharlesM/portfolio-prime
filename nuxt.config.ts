@@ -6,7 +6,11 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "@nuxt/image",
     "@nuxtjs/robots",
-    "nuxt-gtag"
+    "nuxt-gtag",
+    "@nuxtjs/seo",
+    "nuxt-og-image",
+    "@nuxtjs/sitemap",
+    "nuxt-simple-robots"
   ],
   shadcn: {
     /**
@@ -20,20 +24,37 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
 
+  sitemap: {
+    sitemaps: true,
+    // modify the chunk size if you need
+    defaultSitemapsChunkSize: 2000, // default 1000
+  },
+
   /**SECTION SEO
    * @description SEO related configurations
    */
+  site: {
+    url: "https://charlesisa.dev",
+    charset: "utf-16",
+    viewport: "width=device-width, height=device-height, initial-scale=1,",
+    name: "Charles McGregory's portfolio",
+    meta: [
+      {
+        name: "description",
+        content: "I like to dabble in a lot of software related things.",
+      },
+    ],
+    defaultLocale: "en", // not needed if you have @nuxtjs/i18n installed
+    trailingSlash: false,
+  },
+
   app: {
     head: {
-      charset: "utf-16",
-      viewport: "width=device-width, height=device-height, initial-scale=1,",
-      title: "Charles McGregory's portfolio",
-      meta: [
-        {
-          name: "description",
-          content: "I like to dabble in a lot of software related things.",
-        },
-      ],
+      titleTemplate: "%siteName %separator %s",
+      templateParams: {
+        separator: "|",
+        // other common separators: '·', '—', '•'
+      },
     },
   },
 
