@@ -40,5 +40,5 @@
   };
 
   // Call the function with a sample date
-  console.log(data.value.posts[0]);
+  // console.log(data.value.posts[0]);
 </script>

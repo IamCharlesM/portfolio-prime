@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -10,8 +11,18 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "nuxt-og-image",
     "@nuxtjs/sitemap",
-    "nuxt-simple-robots"
+    "nuxt-simple-robots",
   ],
+
+  runtimeConfig: {
+    public: {
+      GITHUB_LINK: process.env.GITHUB_LINK,
+      LINKEDIN_LINK: process.env.LINKEDIN_LINK,
+      RESUME_LINK: process.env.RESUME_LINK,
+      CALENDLY_LINK: process.env.CALENDLY_LINK,
+    },
+  },
+
   shadcn: {
     /**
      * Prefix for all the imported component

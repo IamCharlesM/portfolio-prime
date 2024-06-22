@@ -56,12 +56,13 @@
   import FormContact from "@/components/FormContact";
   import FormSuccess from "@/components/FormSuccess";
   import { Form } from "./ui/form/index";
+  const config = useRuntimeConfig();
 
-  const calendlyLink = process.env.CALENDLY_LINK;
-  const githubLink = process.env.GITHUB_LINK;
-  const linkedinLink = process.env.LINKEDIN_LINK;
+  const calendlyLink = ref(config.public.CALENDLY_LINK);
+  const githubLink = ref(config.public.GITHUB_LINK);
+  const linkedinLink = ref(config.public.LINKEDIN_LINK);
 
-  let currentComponent = ref(FormContact);
+  let currentComponent = shallowRef(FormContact);
 
   const switchComponent = (component: Object) => {
     currentComponent.value = component;
