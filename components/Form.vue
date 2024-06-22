@@ -10,15 +10,33 @@
 
       <div class="gap-4 flex flex-col">
         <span class="w-full flex gap-3"
-          ><CalendarClock /> <a :href="calendlyLink">Calendly</a>
+          ><CalendarClock class="my-auto" />
+          <a :href="calendlyLink"
+            ><Button
+              variant="link"
+              class="text-foreground hover:text-primary text-lg"
+              >Calendly</Button
+            ></a
+          >
         </span>
         <span class="w-full flex gap-3"
-          ><Linkedin /><a :href="linkedinLink">Linkedin</a></span
+          ><Linkedin class="my-auto" /><a :href="linkedinLink"
+            ><Button
+              variant="link"
+              class="text-foreground hover:text-primary text-lg"
+              >Linkedin</Button
+            ></a
+          ></span
         >
         <span class="w-full flex gap-3"
-          ><Github /><a :href="githubLink">Github</a></span
+          ><Github class="my-auto" /><a :href="githubLink"
+            ><Button
+              variant="link"
+              class="text-foreground hover:text-primary text-lg"
+              >Github</Button
+            ></a
+          ></span
         >
-        <span class="w-full flex gap-3"><MapPin /> Chicago, Illinois</span>
       </div>
     </div>
     <component
@@ -29,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-  import { Linkedin, Github, MapPin, CalendarClock } from "lucide-vue-next";
+  import { Linkedin, Github, CalendarClock } from "lucide-vue-next";
 
   import { Button } from "@/components/ui/button";
   import { Input } from "@/components/ui/input";
