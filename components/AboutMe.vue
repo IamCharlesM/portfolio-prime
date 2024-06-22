@@ -12,7 +12,7 @@
       <div class="flex flex-col md:grid md:grid-cols-2 w-full h-fit">
         <div class="p-4">
           <div
-            class="rounded-full w-96 h-96 bg-primary bg-cover mx-auto"
+            class="rounded-full w-full md:w-96 h-96 bg-primary bg-cover mx-auto"
             style="background-image: url('/me.jpg')"
           ></div>
         </div>
