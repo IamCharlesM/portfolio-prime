@@ -3,7 +3,7 @@
     v-if="heading == 1"
     class="space-y-3"
   >
-    <h1 class="text-5xl">
+    <h1 class="text-4xl font-semibold md:text-5xl">
       {{ title }}
       <span
         v-if="name"
@@ -11,7 +11,7 @@
         >{{ name }}</span
       >
     </h1>
-    <p class="text-3xl">{{ body }}</p>
+    <p class="text-xl text-left md:text-3xl">{{ body }}</p>
   </div>
   <div v-else-if="heading == 2">
     <h2 class="text-4xl">{{ title }}</h2>
