@@ -61,8 +61,6 @@
   const githubLink = process.env.GITHUB_LINK;
   const linkedinLink = process.env.LINKEDIN_LINK;
 
-  console.log(calendlyLink);
-
   let currentComponent = ref(FormContact);
 
   const switchComponent = (component: Object) => {
