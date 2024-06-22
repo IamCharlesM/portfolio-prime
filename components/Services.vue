@@ -1,10 +1,10 @@
 <template>
   <section
-    class="lg:h-[482px] bg-muted flex flex-col h-fit"
+    class="lg:h-fit bg-muted flex flex-col h-fit"
     id="services"
   >
     <div
-      class="max-w-7xl md:px-10 mx-auto p-4 h-full flex flex-col w-full md:gap-11"
+      class="max-w-7xl md:px-10 mx-auto p-4 h-full flex flex-col w-full gap-11"
     >
       <SectionTitle
         title="Services"

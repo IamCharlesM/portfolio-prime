@@ -12,7 +12,19 @@
         body="I'm a full-stack software engineer with a passion for using data to build beautiful, functional, and accessible websites for businesses."
       />
       <div class="flex justify-center gap-3 h-full">
-        <Github :size="44" /> <Linkedin :size="44" />
+        <a :href="githubLink">
+          <Github
+            :size="44"
+            :color="'#3b82f6'"
+            class="animate hover:scale-105 transition"
+        /></a>
+        <a :href="linkedinLink">
+          <Linkedin
+            :size="44"
+            :color="'#3b82f6'"
+            class="animate hover:scale-105 transition"
+          />
+        </a>
       </div>
     </div>
   </section>
@@ -20,4 +32,7 @@
 
 <script setup lang="ts">
   import { Github, Linkedin } from "lucide-vue-next";
+
+  const githubLink = process.env.GITHUB_LINK;
+  const linkedinLink = process.env.LINKEDIN_LINK;
 </script>

@@ -1,61 +1,75 @@
 <template>
-  <nav class="items-center justify-between h-28 p-4 flex flex-row border-b-2">
-    <div>
-      <NuxtLink to="/">
-        <NuxtPicture
-          format="avif,webp"
-          src="/logo.webp"
-          placeholder
-          quality="80"
-          width="100"
-          height="100"
-          alt="My Logo"
-          fit="cover"
+  <nav class="h-28 p-4 border-b-2 sticky top-0 z-50 bg-background">
+    <div class="items-center mx-auto max-w-7xl justify-between flex flex-row">
+      <div>
+        <NuxtLink to="/">
+          <NuxtPicture
+            format="avif,webp"
+            src="/logo.webp"
+            placeholder
+            quality="80"
+            width="100"
+            height="100"
+            alt="My Logo"
+            fit="cover"
+          />
+        </NuxtLink>
+      </div>
+      <div class="flex md:hidden">
+        <DrawerMenu
+          :pages="pages"
+          :links="links"
         />
-      </NuxtLink>
-    </div>
-    <div class="flex md:hidden">
-      <DrawerMenu
-        :pages="pages"
-        :links="links"
-      />
-    </div>
-    <div class="hidden md:flex">
-      <ul class="flex">
-        <li
-          v-for="(page, index) in pages"
-          :key="index"
-        >
-          <NuxtLink
-            :to="page.to"
-            class=""
-            ><Button variant="link"> {{ page.property }}</Button></NuxtLink
+      </div>
+      <div class="hidden md:flex">
+        <ul class="flex">
+          <li
+            v-for="(page, index) in pages"
+            :key="index"
           >
-        </li>
-        <li
-          v-for="(link, index) in links"
-          :key="index"
-        >
-          <a
-            v-if="link.name == 'hire me'"
-            :href="link.href"
-            target="_blank"
-            ><Button>{{ link.name }}</Button></a
+            <NuxtLink
+              :to="page.to"
+              class=""
+              ><Button
+                variant="link"
+                class="text-foreground hover:text-primary"
+              >
+                {{ page.property }}</Button
+              ></NuxtLink
+            >
+          </li>
+          <li
+            v-for="(link, index) in links"
+            :key="index"
           >
-          <a
-            v-else
-            :href="link.href"
-            target="_blank"
-            ><Button variant="link">{{ link.name }}</Button></a
-          >
-        </li>
-      </ul>
+            <a
+              v-if="link.name == 'hire me'"
+              :href="link.href"
+              target="_blank"
+              ><Button>{{ link.name }}</Button></a
+            >
+            <a
+              v-else
+              :href="link.href"
+              target="_blank"
+              ><Button
+                variant="link"
+                class="text-foreground hover:text-primary"
+                >{{ link.name }}</Button
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
   import { Button } from "@/components/ui/button";
+
+  const calendlyLink = process.env.CALENDLY_LINK;
+  const resumeLink = process.env.RESUME_LINK;
 
   const pages = [
     {
@@ -64,16 +78,28 @@
     },
     {
       property: "projects",
-      to: "/project",
+      to: "/project/",
+    },
+    {
+      property: "services",
+      to: "#services",
+    },
+    {
+      property: "my bio",
+      to: "#about-me",
+    },
+    {
+      property: "contact",
+      to: "#contact-me",
     },
   ];
 
   const links = [
     {
       name: "resume",
-      href: "https://docs.google.com/document/d/1iU0btnTA44hugqX1iixqxUWb-Nl92XZbhwmcqvL32aQ/edit#heading=h.rlsx4o5b4mpo",
+      href: resumeLink,
     },
-    { name: "hire me", href: "https://calendly.com/because-e2g/30min" },
+    { name: "hire me", href: calendlyLink },
   ];
 </script>
 

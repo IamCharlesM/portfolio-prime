@@ -4,7 +4,7 @@
     <div
       v-for="(post, index) in data.posts"
       :key="index"
-      class="mx-auto max-w-7xl flex flex-col text-center gap-3"
+      class="mx-auto max-w-7xl flex flex-col text-center gap-3 py-10"
     >
       <h1 class="text-center text-3xl font-boldlg:text-4xl">
         {{ post.meta_title }}

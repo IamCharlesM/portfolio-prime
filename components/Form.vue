@@ -1,102 +1,53 @@
 <template>
-  <div class="w-full h-fit grid grid-cols-2 max-w-5xl mx-auto bg-muted p-8">
+  <div
+    class="w-full h-fit grid md:grid-cols-2 grid-cols-1 gap-10 max-w-5xl mx-auto bg-muted p-8 text-lg"
+  >
     <div class="flex flex-col gap-10">
-      <div class="flex flex-col">
+      <div class="flex flex-col text-2xl font-medium">
         <span>Have an awesome idea?</span>
         <span class="text-primary">Let's Discuss</span>
       </div>
 
       <div class="gap-4 flex flex-col">
-        <span class="w-full flex gap-3"><PhoneCall /> 1234567</span>
-        <span class="w-full flex gap-3"><PhoneCall /> 1234567</span>
-        <span class="w-full flex gap-3"><PhoneCall /> 1234567</span>
+        <span class="w-full flex gap-3"
+          ><CalendarClock /> <a :href="calendlyLink">Calendly</a>
+        </span>
+        <span class="w-full flex gap-3"
+          ><Linkedin /><a :href="linkedinLink">Linkedin</a></span
+        >
+        <span class="w-full flex gap-3"
+          ><Github /><a :href="githubLink">Github</a></span
+        >
+        <span class="w-full flex gap-3"><MapPin /> Chicago, Illinois</span>
       </div>
     </div>
-    <div class="flex w-full">
-      <form
-        @submit="onSubmit"
-        class="gap-4 flex flex-col w-full max-w-md mx-auto justify-between"
-      >
-        <FormField
-          v-slot="{ componentField }"
-          name="username"
-        >
-          <FormItem>
-            <FormLabel>Full Name</FormLabel>
-            <FormControl>
-              <Input
-                type="text"
-                placeholder="full name"
-                v-bind="componentField"
-              />
-            </FormControl>
-
-            <FormMessage />
-          </FormItem>
-          <FormItem>
-            <FormLabel>Email</FormLabel>
-            <FormControl>
-              <Input
-                type="text"
-                placeholder="email"
-                v-bind="componentField"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-          <FormItem>
-            <FormLabel>Message</FormLabel>
-            <FormControl>
-              <Textarea
-                type="text"
-                placeholder="message"
-                v-bind="componentField"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
-        <Button
-          class="w-fit"
-          type="submit"
-        >
-          Submit
-        </Button>
-      </form>
-    </div>
+    <component
+      :is="currentComponent"
+      @emit="switchComponent(FormSuccess)"
+    ></component>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { PhoneCall } from "lucide-vue-next";
-
-  import { useForm } from "vee-validate";
-  import { toTypedSchema } from "@vee-validate/zod";
-  import * as z from "zod";
+  import { Linkedin, Github, MapPin, CalendarClock } from "lucide-vue-next";
 
   import { Button } from "@/components/ui/button";
-  import {
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-  } from "@/components/ui/form";
   import { Input } from "@/components/ui/input";
   import { Textarea } from "@/components/ui/textarea";
 
-  const formSchema = toTypedSchema(
-    z.object({
-      username: z.string().min(2).max(50),
-    })
-  );
+  import FormContact from "@/components/FormContact";
+  import FormSuccess from "@/components/FormSuccess";
+  import { Form } from "./ui/form/index";
 
-  const form = useForm({
-    validationSchema: formSchema,
-  });
+  const calendlyLink = process.env.CALENDLY_LINK;
+  const githubLink = process.env.GITHUB_LINK;
+  const linkedinLink = process.env.LINKEDIN_LINK;
 
-  const onSubmit = form.handleSubmit((values) => {
-    console.log("Form submitted!", values);
-  });
+  console.log(calendlyLink);
+
+  let currentComponent = ref(FormContact);
+
+  const switchComponent = (component: Object) => {
+    currentComponent.value = component;
+  };
 </script>

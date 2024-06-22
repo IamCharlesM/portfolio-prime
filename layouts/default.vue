@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="scroll-smooth">
     <Navbar />
-
     <slot />
+    <Footer />
   </div>
 </template>
