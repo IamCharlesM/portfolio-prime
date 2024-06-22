@@ -5,16 +5,17 @@
       @submit="onSubmit"
     >
       <FormField
-        v-slot="{ componentField }"
         name="fullName"
+        v-slot="{ field }"
       >
         <FormItem>
-          <FormLabel>Full Name</FormLabel>
+          <FormLabel for="fullName">Full Name</FormLabel>
           <FormControl>
             <Input
               type="text"
               placeholder="full name"
-              v-bind="componentField"
+              v-bind="field"
+              id="fullName"
               name="entry.2131897017"
             />
           </FormControl>
@@ -23,16 +24,17 @@
       </FormField>
 
       <FormField
-        v-slot="{ componentField }"
         name="email"
+        v-slot="{ field }"
       >
         <FormItem>
-          <FormLabel>Email</FormLabel>
+          <FormLabel for="email">Email</FormLabel>
           <FormControl>
             <Input
               type="text"
               placeholder="email"
-              v-bind="componentField"
+              v-bind="field"
+              id="email"
               name="entry.67801850"
             />
           </FormControl>
@@ -41,16 +43,17 @@
       </FormField>
 
       <FormField
-        v-slot="{ componentField }"
         name="message"
+        v-slot="{ field }"
       >
         <FormItem>
-          <FormLabel>Message</FormLabel>
+          <FormLabel for="message">Message</FormLabel>
           <FormControl>
             <Textarea
               type="text"
               placeholder="message"
-              v-bind="componentField"
+              v-bind="field"
+              id="message"
               name="entry.188599615"
             />
           </FormControl>
@@ -124,5 +127,3 @@
     }
   );
 </script>
-
-<style scoped></style>

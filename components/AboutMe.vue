@@ -44,7 +44,8 @@
 </template>
 
 <script setup lang="ts">
-  const resumeLink = process.env.RESUME_LINK;
+  const config = useRuntimeConfig();
+  const resumeLink = config.public.RESUME_LINK;
 
   import { Button } from "@/components/ui/button";
   import { Mail } from "lucide-vue-next";

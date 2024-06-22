@@ -71,8 +71,6 @@
     title: meta.title,
     description: meta.description,
   });
-
-  console.log({ meta });
 </script>
 
 <style scoped>

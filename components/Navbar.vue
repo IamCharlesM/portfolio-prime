@@ -68,8 +68,9 @@
 <script setup lang="ts">
   import { Button } from "@/components/ui/button";
 
-  const calendlyLink = process.env.CALENDLY_LINK;
-  const resumeLink = process.env.RESUME_LINK;
+  const config = useRuntimeConfig();
+  const calendlyLink = config.public.CALENDLY_LINK;
+  const resumeLink = config.public.RESUME_LINK;
 
   const pages = [
     {

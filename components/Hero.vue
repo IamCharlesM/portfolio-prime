@@ -33,6 +33,7 @@
 <script setup lang="ts">
   import { Github, Linkedin } from "lucide-vue-next";
 
-  const githubLink = process.env.GITHUB_LINK;
-  const linkedinLink = process.env.LINKEDIN_LINK;
+  const config = useRuntimeConfig();
+  const githubLink = ref(config.public.GITHUB_LINK);
+  const linkedinLink = ref(config.public.LINKEDIN_LINK);
 </script>
