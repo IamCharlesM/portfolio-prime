@@ -11,9 +11,14 @@
               :key="index"
             >
               <NuxtLink
-                :to="page.to"
+                :to="{ path: page.path, hash: page.hash }"
                 class=""
-                ><Button variant="link"> {{ page.property }}</Button></NuxtLink
+                ><Button
+                  variant="link"
+                  class="text-foreground hover:text-primary"
+                >
+                  {{ page.property }}</Button
+                ></NuxtLink
               >
             </li>
             <li
@@ -30,7 +35,11 @@
                 v-else
                 :href="link.href"
                 target="_blank"
-                ><Button variant="link">{{ link.name }}</Button></a
+                ><Button
+                  variant="link"
+                  class="text-foreground hover:text-primary"
+                  >{{ link.name }}</Button
+                ></a
               >
             </li>
           </ul>
@@ -53,7 +62,7 @@
   import { Menu } from "lucide-vue-next";
 
   const props = defineProps<{
-    pages: { property: string; to: string }[];
+    pages: { property: string; path: string; hash: string }[];
     links: { name: string; href: string }[];
   }>();
 </script>

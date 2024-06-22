@@ -8,7 +8,9 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-gtag",
     "@nuxtjs/seo",
-    "nuxt-og-image"
+    "nuxt-og-image",
+    "@nuxtjs/sitemap",
+    "nuxt-simple-robots"
   ],
   shadcn: {
     /**
@@ -20,6 +22,12 @@ export default defineNuxtConfig({
      * @default "./components/ui"
      */
     componentDir: "./components/ui",
+  },
+
+  sitemap: {
+    sitemaps: true,
+    // modify the chunk size if you need
+    defaultSitemapsChunkSize: 2000, // default 1000
   },
 
   /**SECTION SEO

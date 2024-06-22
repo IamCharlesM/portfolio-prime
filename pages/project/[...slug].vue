@@ -6,8 +6,8 @@
       :key="index"
       class="mx-auto max-w-7xl flex flex-col text-center gap-3 py-10"
     >
-      <h1 class="text-center text-3xl font-boldlg:text-4xl">
-        {{ post.meta_title }}
+      <h1 class="text-center text-3xl font-bold lg:text-6xl">
+        {{ post.title }}
       </h1>
 
       <h3>Last updated {{ formattedDate }}</h3>
@@ -65,6 +65,14 @@
       { hid: "og-image", property: "og:image", content: meta.feature_image },
     ],
   });
+
+  defineOgImageComponent("Frame", {
+    headline: "Hi",
+    title: meta.title,
+    description: meta.description,
+  });
+
+  console.log({ meta });
 </script>
 
 <style scoped>

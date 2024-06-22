@@ -1,5 +1,5 @@
 <template>
-  <main class="px-4">
+  <main class="px-4 py-10">
     <div class="max-w-7xl justify-items-center mx-auto gap-10 flex flex-col">
       <div>
         <h1 class="mb-5 text-center text-3xl font-bold text-white lg:text-4xl">
@@ -29,5 +29,11 @@
         content: "I'm legit including this so Google doesnt't yell at me.",
       },
     ],
+  });
+
+  defineOgImageComponent("Frame", {
+    headline: "Hi",
+    title: "This is my projects main page",
+    description: "I'm legit including this so Google doesnt't yell at me.",
   });
 </script>

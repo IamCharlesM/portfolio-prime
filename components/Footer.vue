@@ -26,7 +26,7 @@
               class="h-2 my-1"
             >
               <NuxtLink
-                :to="page.to"
+                :to="{ path: page.path, hash: page.hash }"
                 class=""
                 ><Button
                   variant="link"
@@ -95,24 +95,26 @@
   const pages = [
     {
       property: "home",
-      to: "/",
-    },
-
-    {
-      property: "services",
-      to: "/#services",
-    },
-    {
-      property: "my bio",
-      to: "/#about-me",
-    },
-    {
-      property: "contact",
-      to: "/#contact-me",
+      path: "/",
     },
     {
       property: "projects",
-      to: "/project",
+      path: "/project",
+    },
+    {
+      property: "services",
+      path: "/",
+      hash: "#services",
+    },
+    {
+      property: "my bio",
+      path: "/",
+      hash: "#about-me",
+    },
+    {
+      property: "contact",
+      path: "/",
+      hash: "#contact-me",
     },
   ];
 

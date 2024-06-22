@@ -2,7 +2,7 @@
   <nav class="h-28 p-4 border-b-2 sticky top-0 z-50 bg-background">
     <div class="items-center mx-auto max-w-7xl justify-between flex flex-row">
       <div>
-        <NuxtLink to="/">
+        <NuxtLink :to="{ path: '/' }">
           <NuxtPicture
             format="avif,webp"
             src="/logo.webp"
@@ -28,7 +28,7 @@
             :key="index"
           >
             <NuxtLink
-              :to="page.to"
+              :to="{ path: page.path, hash: page.hash }"
               class=""
               ><Button
                 variant="link"
@@ -74,23 +74,26 @@
   const pages = [
     {
       property: "home",
-      to: "/",
+      path: "/",
     },
     {
       property: "projects",
-      to: "/project/",
+      path: "/project",
     },
     {
       property: "services",
-      to: "#services",
+      path: "/",
+      hash: "#services",
     },
     {
       property: "my bio",
-      to: "#about-me",
+      path: "/",
+      hash: "#about-me",
     },
     {
       property: "contact",
-      to: "#contact-me",
+      path: "/",
+      hash: "#contact-me",
     },
   ];
 
