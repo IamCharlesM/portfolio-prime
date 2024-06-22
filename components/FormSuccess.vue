@@ -1,10 +1,7 @@
 <template>
   <div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolor,
-      voluptates natus ea tempora accusantium quisquam nemo blanditiis velit
-      error, eos modi ratione deserunt distinctio sequi! Illum excepturi iure
-      voluptatem.
+    <p class="text-lg">
+      Thanks for reaching out! I'll get back to you as soon as possible.
     </p>
   </div>
 </template>

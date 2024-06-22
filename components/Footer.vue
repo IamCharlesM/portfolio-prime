@@ -78,17 +78,20 @@
 </template>
 
 <script setup lang="ts">
-  const calendlyLink = process.env.CALENDLY_LINK;
-  const resumeLink = process.env.RESUME_LINK;
+  const config = useRuntimeConfig();
+  const calendlyLink = ref(config.public.CALENDLY_LINK);
+  const resumeLink = ref(config.public.RESUME_LINK);
+  const githubLink = ref(config.public.GITHUB_LINK);
+  const linkedinLink = ref(config.public.LINKEDIN_LINK);
 
   const socialLinks = [
     {
       name: "github",
-      href: process.env.GITHUB_LINK,
+      href: githubLink,
     },
     {
       name: "linkedin",
-      href: process.env.LINKEDIN_LINK,
+      href: linkedinLink,
     },
   ];
 
