@@ -11,7 +11,7 @@
 <script setup lang="ts">
   defineOgImageComponent("Frame", {
     headline: "Hi",
-    title: "This is my portoflio",
+    title: "My own slice of the internet",
     description: "Come take a glance into my world",
   });
 </script>
