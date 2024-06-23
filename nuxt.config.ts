@@ -48,7 +48,7 @@ export default defineNuxtConfig({
     url: "https://charlesisa.dev",
     charset: "utf-16",
     viewport: "width=device-width, height=device-height, initial-scale=1,",
-    name: "Charles McGregory's portfolio",
+    name: "Full-stack developer in Chicago",
     meta: [
       {
         name: "description",
