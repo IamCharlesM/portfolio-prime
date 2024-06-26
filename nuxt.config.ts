@@ -48,13 +48,8 @@ export default defineNuxtConfig({
     url: "https://charlesisa.dev",
     charset: "utf-16",
     viewport: "width=device-width, height=device-height, initial-scale=1,",
-    name: "Full-stack developer in Chicago",
-    meta: [
-      {
-        name: "description",
-        content: "I like to dabble in a lot of software related things.",
-      },
-    ],
+    name: "Charles' Portfolio",
+    description: "Full-stack developer in Chicago",
     defaultLocale: "en", // not needed if you have @nuxtjs/i18n installed
     trailingSlash: false,
   },
