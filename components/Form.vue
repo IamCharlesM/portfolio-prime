@@ -11,7 +11,7 @@
       <div class="gap-4 flex flex-col">
         <span class="w-full flex gap-3"
           ><CalendarClock class="my-auto" />
-          <a :href="calendlyLink"
+          <a :href="calendlyLink" target="_blank" rel="nofollow"
             ><Button
               variant="link"
               class="text-foreground hover:text-primary text-lg"
@@ -20,7 +20,10 @@
           >
         </span>
         <span class="w-full flex gap-3"
-          ><Linkedin class="my-auto" /><a :href="linkedinLink"
+          ><Linkedin class="my-auto" /><a
+            :href="linkedinLink"
+            target="_blank"
+            rel="nofollow"
             ><Button
               variant="link"
               class="text-foreground hover:text-primary text-lg"
@@ -29,7 +32,10 @@
           ></span
         >
         <span class="w-full flex gap-3"
-          ><Github class="my-auto" /><a :href="githubLink"
+          ><Github class="my-auto" /><a
+            :href="githubLink"
+            target="_blank"
+            rel="nofollow"
             ><Button
               variant="link"
               class="text-foreground hover:text-primary text-lg"
@@ -47,24 +53,22 @@
 </template>
 
 <script setup lang="ts">
-  import { Linkedin, Github, CalendarClock } from "lucide-vue-next";
+import { Linkedin, Github, CalendarClock } from "lucide-vue-next";
 
-  import { Button } from "@/components/ui/button";
-  import { Input } from "@/components/ui/input";
-  import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
-  import FormContact from "@/components/FormContact";
-  import FormSuccess from "@/components/FormSuccess";
-  import { Form } from "./ui/form/index";
-  const config = useRuntimeConfig();
+import FormContact from "@/components/FormContact";
+import FormSuccess from "@/components/FormSuccess";
+import { Form } from "./ui/form/index";
+const config = useRuntimeConfig();
 
-  const calendlyLink = ref(config.public.CALENDLY_LINK);
-  const githubLink = ref(config.public.GITHUB_LINK);
-  const linkedinLink = ref(config.public.LINKEDIN_LINK);
+const calendlyLink = ref(config.public.CALENDLY_LINK);
+const githubLink = ref(config.public.GITHUB_LINK);
+const linkedinLink = ref(config.public.LINKEDIN_LINK);
 
-  let currentComponent = shallowRef(FormContact);
+let currentComponent = shallowRef(FormContact);
 
-  const switchComponent = (component: Object) => {
-    currentComponent.value = component;
-  };
+const switchComponent = (component: Object) => {
+  currentComponent.value = component;
+};
 </script>
