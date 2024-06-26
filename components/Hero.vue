@@ -12,13 +12,13 @@
         body="I'm a full-stack software engineer with a passion for using data to build beautiful, functional, and accessible websites for businesses."
       />
       <div class="flex justify-center gap-3 h-full">
-        <a :href="githubLink">
+        <a :href="githubLink" aria-label="Check out my Github">
           <Github
             :size="44"
             :color="'hsl(var(--primary))'"
             class="animate hover:scale-105 transition"
         /></a>
-        <a :href="linkedinLink">
+        <a :href="linkedinLink" aria-label="Check out my linkedin">
           <Linkedin
             :size="44"
             :color="'hsl(var(--primary))'"
