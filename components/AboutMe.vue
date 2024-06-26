@@ -1,14 +1,7 @@
 <template>
-  <section
-    class="flex flex-col h-fit"
-    id="about-me"
-  >
+  <section class="flex flex-col h-fit" id="about-me">
     <div class="max-w-7xl flex flex-col h-fit mx-auto gap-10">
-      <SectionTitle
-        title="MY BIO"
-        description="About"
-        highlight="me"
-      />
+      <SectionTitle title="MY BIO" description="About" highlight="me" />
       <div class="flex flex-col md:grid md:grid-cols-2 w-full h-fit">
         <div class="p-4">
           <div
@@ -32,7 +25,7 @@
             exploring new cultures, and expanding my horizons.
           </p>
 
-          <a :href="resumeLink">
+          <a :href="resumeLink" target="_blank" rel="_nofollow">
             <Button class="w-fit">
               <Mail class="w-4 h-4 mr-2" /> View Resume
             </Button>
@@ -44,11 +37,11 @@
 </template>
 
 <script setup lang="ts">
-  const config = useRuntimeConfig();
-  const resumeLink = config.public.RESUME_LINK;
+const config = useRuntimeConfig();
+const resumeLink = config.public.RESUME_LINK;
 
-  import { Button } from "@/components/ui/button";
-  import { Mail } from "lucide-vue-next";
+import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-vue-next";
 </script>
 
 <style scoped></style>

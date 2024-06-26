@@ -70,6 +70,11 @@ defineOgImageComponent("Frame", {
 </script>
 
 <style scoped>
+:deep(strong) {
+  color: white;
+  font-weight: bold;
+}
+
 :deep(p) {
   text-align: left;
 }
