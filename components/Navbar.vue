@@ -16,20 +16,12 @@
         </NuxtLink>
       </div>
       <div class="flex md:hidden">
-        <DrawerMenu
-          :pages="pages"
-          :links="links"
-        />
+        <DrawerMenu :pages="pages" :links="links" />
       </div>
       <div class="hidden md:flex">
         <ul class="flex">
-          <li
-            v-for="(page, index) in pages"
-            :key="index"
-          >
-            <NuxtLink
-              :to="{ path: page.path, hash: page.hash }"
-              class=""
+          <li v-for="(page, index) in pages" :key="index">
+            <NuxtLink :to="{ path: page.path, hash: page.hash }" class=""
               ><Button
                 variant="link"
                 class="text-foreground hover:text-primary"
@@ -38,20 +30,15 @@
               ></NuxtLink
             >
           </li>
-          <li
-            v-for="(link, index) in links"
-            :key="index"
-          >
+          <li v-for="(link, index) in links" :key="index">
             <a
               v-if="link.name == 'hire me'"
               :href="link.href"
               target="_blank"
+              rel="nofollow"
               ><Button>{{ link.name }}</Button></a
             >
-            <a
-              v-else
-              :href="link.href"
-              target="_blank"
+            <a v-else :href="link.href" target="_blank" rel="nofollow"
               ><Button
                 variant="link"
                 class="text-foreground hover:text-primary"
@@ -66,45 +53,45 @@
 </template>
 
 <script setup lang="ts">
-  import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 
-  const config = useRuntimeConfig();
-  const calendlyLink = config.public.CALENDLY_LINK;
-  const resumeLink = config.public.RESUME_LINK;
+const config = useRuntimeConfig();
+const calendlyLink = config.public.CALENDLY_LINK;
+const resumeLink = config.public.RESUME_LINK;
 
-  const pages = [
-    {
-      property: "home",
-      path: "/",
-    },
-    {
-      property: "projects",
-      path: "/project",
-    },
-    {
-      property: "services",
-      path: "/",
-      hash: "#services",
-    },
-    {
-      property: "my bio",
-      path: "/",
-      hash: "#about-me",
-    },
-    {
-      property: "contact",
-      path: "/",
-      hash: "#contact-me",
-    },
-  ];
+const pages = [
+  {
+    property: "home",
+    path: "/",
+  },
+  {
+    property: "projects",
+    path: "/project",
+  },
+  {
+    property: "services",
+    path: "/",
+    hash: "#services",
+  },
+  {
+    property: "my bio",
+    path: "/",
+    hash: "#about-me",
+  },
+  {
+    property: "contact",
+    path: "/",
+    hash: "#contact-me",
+  },
+];
 
-  const links = [
-    {
-      name: "resume",
-      href: resumeLink,
-    },
-    { name: "hire me", href: calendlyLink },
-  ];
+const links = [
+  {
+    name: "resume",
+    href: resumeLink,
+  },
+  { name: "hire me", href: calendlyLink },
+];
 </script>
 
 <style scoped></style>
