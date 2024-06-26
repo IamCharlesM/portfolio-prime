@@ -19,10 +19,14 @@
               >
             </li>
             <li v-for="(link, index) in props.links" :key="index">
-              <a v-if="link.name == 'hire me'" :href="link.href" target="_blank"
+              <a
+                v-if="link.name == 'hire me'"
+                :href="link.href"
+                target="_blank"
+                rel="nofollow"
                 ><Button>{{ link.name }}</Button></a
               >
-              <a v-else :href="link.href" target="_blank"
+              <a v-else :href="link.href" target="_blank" rel="nofollow"
                 ><Button
                   variant="link"
                   class="text-foreground hover:text-primary"
