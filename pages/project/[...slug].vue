@@ -11,7 +11,7 @@
       </h1>
 
       <h3>Last updated {{ formattedDate }}</h3>
-      <div>
+      <div class="mx-auto">
         <img
           :src="post.feature_image"
           :alt="post.feature_image_alt"
