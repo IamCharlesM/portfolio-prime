@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
   const { data, pending, error } = await useFetch(
-    "https://content.charlesisa.dev/ghost/api/content/posts/?key=5d8b3cdb92a539dede4ee744a0&include=tags"
+    "https://content.charlesisa.dev/ghost/api/content/posts/?key=364f2b2dc67c09643ffad31928&include=tags"
   );
   if (error.value) {
     console.error("Fetch error:", error.value);
