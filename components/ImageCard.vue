@@ -20,10 +20,13 @@
         <figcaption class="text-sm flex flex-col gap-4 lg:px-0 px-11">
           <h3 class="text-2xl font-medium">{{ title }}</h3>
           <div class="flex flex-row flex-wrap gap-1">
-            <span v-for="(tag, index) in tags" :key="index">
+            <span
+              v-for="(tag, index) in tags"
+              :key="index"
+            >
               <Badge
                 class="w-fit"
-                v-if="tag.name != '#projects' && tag.name != '#projects'"
+                v-if="tag.name.includes('#') != true"
                 >{{ tag.name }}</Badge
               >
             </span>
@@ -37,14 +40,14 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  src?: string;
-  alt?: string;
-  title?: string;
-  link?: string;
-  excerpt?: string;
-  tags?: Array<{ name: string }>;
-}>();
+  const props = defineProps<{
+    src?: string;
+    alt?: string;
+    title?: string;
+    link?: string;
+    excerpt?: string;
+    tags?: Array<{ name: string }>;
+  }>();
 </script>
 
 <style scoped></style>
