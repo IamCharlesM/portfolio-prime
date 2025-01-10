@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxtjs/sitemap",
     "nuxt-simple-robots",
+    "@vueuse/motion/nuxt",
   ],
 
   runtimeConfig: {
@@ -20,8 +21,24 @@ export default defineNuxtConfig({
       LINKEDIN_LINK: process.env.LINKEDIN_LINK,
       RESUME_LINK: process.env.RESUME_LINK,
       CALENDLY_LINK: process.env.CALENDLY_LINK,
+      motion: {
+        directives: {
+          'pop-bottom': {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+            }
+          }
+        }
     },
   },
+},
 
   shadcn: {
     /**
@@ -63,6 +80,8 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  
 
   //!SECTION
 });
