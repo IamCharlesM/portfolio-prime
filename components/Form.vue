@@ -1,5 +1,6 @@
 <template>
   <div
+    v-motion-fade-visible-once
     class="w-full h-fit grid md:grid-cols-2 grid-cols-1 gap-10 max-w-5xl mx-auto bg-muted p-8 text-lg"
   >
     <div class="flex flex-col gap-10">

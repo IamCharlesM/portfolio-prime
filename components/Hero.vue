@@ -10,6 +10,7 @@
         title="What's good? I'm"
         name="Charles McGregory."
         body="I'm a full-stack software engineer with a passion for using data to build beautiful, functional, and accessible websites for businesses."
+        :animationDelay="100"
       />
       <div class="flex justify-center gap-3 h-full">
         <a
@@ -22,7 +23,9 @@
             :size="44"
             :color="'hsl(var(--primary))'"
             class="animate hover:scale-105 transition"
-        /></a>
+            v-motion-pop-visible-once
+          />
+        </a>
         <a
           :href="linkedinLink"
           aria-label="Check out my linkedin"
@@ -33,6 +36,7 @@
             :size="44"
             :color="'hsl(var(--primary))'"
             class="animate hover:scale-105 transition"
+            v-motion-pop-visible-once
           />
         </a>
       </div>
@@ -47,3 +51,5 @@ const config = useRuntimeConfig();
 const githubLink = ref(config.public.GITHUB_LINK);
 const linkedinLink = ref(config.public.LINKEDIN_LINK);
 </script>
+
+<style scoped></style>
