@@ -4,6 +4,7 @@
       <div>
         <NuxtLink :to="{ path: '/' }">
           <NuxtPicture
+            v-motion-fade-visible-once
             format="avif,webp"
             src="/logo.webp"
             placeholder
@@ -23,6 +24,7 @@
           <li v-for="(page, index) in pages" :key="index">
             <NuxtLink :to="{ path: page.path, hash: page.hash }" class=""
               ><Button
+                v-motion-fade-visible-once
                 variant="link"
                 class="text-foreground hover:text-primary"
               >
@@ -32,6 +34,7 @@
           </li>
           <li v-for="(link, index) in links" :key="index">
             <a
+              v-motion-fade-visible-once
               v-if="link.name == 'hire me'"
               :href="link.href"
               target="_blank"
@@ -40,6 +43,7 @@
             >
             <a v-else :href="link.href" target="_blank" rel="nofollow"
               ><Button
+                v-motion-fade-visible-once
                 variant="link"
                 class="text-foreground hover:text-primary"
                 >{{ link.name }}</Button
