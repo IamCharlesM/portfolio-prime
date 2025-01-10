@@ -23,7 +23,7 @@
             :size="44"
             :color="'hsl(var(--primary))'"
             class="animate hover:scale-105 transition"
-            v-motion-roll-left
+            v-motion-pop-visible-once
           />
         </a>
         <a
@@ -36,7 +36,7 @@
             :size="44"
             :color="'hsl(var(--primary))'"
             class="animate hover:scale-105 transition"
-            v-motion-roll-right
+            v-motion-pop-visible-once
           />
         </a>
       </div>

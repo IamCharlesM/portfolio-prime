@@ -5,12 +5,13 @@
       <div class="flex flex-col md:grid md:grid-cols-2 w-full h-fit">
         <div class="p-4">
           <div
+            v-motion-pop-visible-once
             class="rounded-full w-full md:w-96 h-96 bg-primary bg-cover mx-auto"
             style="background-image: url('/me.jpg')"
           ></div>
         </div>
         <div class="flex flex-col gap-8 p-4">
-          <p class="text-lg">
+          <p v-motion-fade-visible-once class="text-lg">
             I am a passionate full-stack software engineer who thrives on using
             data to create innovative solutions for businesses. My journey began
             with creating custom themes for MySpace, where I developed a love
@@ -18,7 +19,7 @@
             co-founding edenofthewest.com, an internet radio station that has
             been live for over a decade!
           </p>
-          <p class="text-lg">
+          <p v-motion-fade-visible-once class="text-lg">
             Beyond the screen, I enjoy spending quality time with my friends and
             cats, indulging in books, dancing, playing video games, and watching
             anime. Recently, I've discovered a new passion for traveling,
@@ -26,7 +27,7 @@
           </p>
 
           <a :href="resumeLink" target="_blank" rel="_nofollow">
-            <Button class="w-fit">
+            <Button class="w-fit" v-motion-pop-visible-once>
               <Mail class="w-4 h-4 mr-2" /> View Resume
             </Button>
           </a>

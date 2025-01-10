@@ -1,32 +1,31 @@
 <script setup lang="ts">
-  import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card";
-  import { Separator } from "@/components/ui/separator";
-  import { Code, CloudCog, HeartHandshake } from "lucide-vue-next";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Code, CloudCog, HeartHandshake } from "lucide-vue-next";
+import { delay } from "motion";
 
-  const props = defineProps<{
-    icon: "code" | "cloud-cog" | "heart-handshake";
-  }>();
+const props = defineProps<{
+  icon: "code" | "cloud-cog" | "heart-handshake";
+}>();
 </script>
 
 <template>
   <Card
+    v-motion-slide-visible-once-bottom
+    :delay="150"
     v-if="icon == 'code'"
     class="border border-primary hover:bg-primary hover:text-black transition duration-300 ease-linear h-fit"
   >
     <CardHeader>
       <CardTitle class="space-y-4">
-        <Code
-          v-if="icon == 'code'"
-          :size="24"
-          absoluteStrokeWidth
-        />
+        <Code v-if="icon == 'code'" :size="24" absoluteStrokeWidth />
 
         <div>Front-End Developemnt</div>
       </CardTitle>
@@ -42,16 +41,13 @@
   </Card>
 
   <Card
+    v-motion-slide-visible-once-bottom
     v-if="icon == 'cloud-cog'"
     class="border border-primary hover:bg-primary hover:text-black transition duration-300 ease-linear h-fit"
   >
     <CardHeader>
       <CardTitle class="space-y-4">
-        <CloudCog
-          v-if="icon == 'cloud-cog'"
-          :size="24"
-          absoluteStrokeWidth
-        />
+        <CloudCog v-if="icon == 'cloud-cog'" :size="24" absoluteStrokeWidth />
         <div>Back-End Developemnt</div>
       </CardTitle>
       <Separator class="my-4" />
@@ -68,6 +64,8 @@
   </Card>
 
   <Card
+    v-motion-slide-visible-once-bottom
+    :delay="300"
     v-if="icon == 'heart-handshake'"
     class="border border-primary hover:bg-primary hover:text-black transition duration-300 ease-linear h-fit"
   >
